@@ -27,7 +27,7 @@
 import urllib.request
 from urllib.request import URLError, HTTPError
 import time
-import os
+import os,sys
 import threading
 
 #------------------------------------------------------------------------------
@@ -52,10 +52,11 @@ import threading
 # site3_name site3_url
 # ....
 #------------------------------------------------------------------------------
+
 def geturl():
-	sitefile = '.\\scan.conf'
+	sitefile = '.\\scan.conf.txt'
 	df = dict()
-	f = open(sitefile)
+	f = open(sitefile,"r")
 	a = f.readline().strip('\n')
 	while 1:
 		if a == '':
@@ -103,7 +104,7 @@ def displayscanresult(rel):
 	for a in rel:
 		n = n + 1
 		r, t = scanurl(rel[a])
-                if r == 1:
+		if r == 1:
 			dn = dn + 1
 		else:
 			sn = sn + 1
