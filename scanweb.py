@@ -53,7 +53,7 @@ import threading
 # ....
 #------------------------------------------------------------------------------
 def geturl():
-	sitefile = 'e:\\Python35-32\\mycodes\\ahsites.txt'
+	sitefile = '.\\scan.conf'
 	df = dict()
 	f = open(sitefile)
 	a = f.readline().strip('\n')
@@ -103,7 +103,7 @@ def displayscanresult(rel):
 	for a in rel:
 		n = n + 1
 		r, t = scanurl(rel[a])
-		if r == 1:
+                if r == 1:
 			dn = dn + 1
 		else:
 			sn = sn + 1
